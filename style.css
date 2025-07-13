@@ -5,17 +5,21 @@ body {
     background: #111;
     display: flex;
     flex-direction: column;
-    justify-content: flex-start; 
+    justify-content: flex-start;
     align-items: center;
     font-family: 'Inter', sans-serif;
     color: #e2e8f0;
     padding: 0;
     box-sizing: border-box;
-    overflow: hidden; 
+    overflow: hidden;
+}
+h1 {
+    margin-top: 20px;
+    margin-bottom: 20px; 
 }
 canvas {
-    width: 100vw; 
-    height: calc(100vh - 100px); 
+    width: 75vw; 
+    height: calc(75vh - 120px); 
     border: 4px solid #4a5568;
     border-radius: 12px;
     box-shadow: 0 10px 15px rgba(0, 0, 0, 0.5);
@@ -27,8 +31,10 @@ canvas {
 }
 .button-container {
     margin-top: 20px;
+    display: flex;
+    gap: 15px;
 }
-.generate-button {
+.generate-button, .download-button {
     background-image: linear-gradient(to right, #6a11cb 0%, #2575fc 100%);
     color: white;
     padding: 12px 24px;
@@ -40,16 +46,18 @@ canvas {
     transition: all 0.3s ease;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
     outline: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
-.generate-button:hover {
+.generate-button:hover, .download-button:hover {
     transform: translateY(-2px);
     box-shadow: 0 6px 8px rgba(0, 0, 0, 0.4);
 }
-.generate-button:active {
+.generate-button:active, .download-button:active {
     transform: translateY(0);
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
 }
-
-h1 {
-    margin-top: 20px; 
+.download-button .fas {
+    margin-right: 8px;
 }
