@@ -70,7 +70,7 @@ let thinBuildings;
 let neonHue;
 let moonCount;
 
-let animationFrameId;
+let animationFrameId; 
 
 function applyOperator(operator, x, y) {
     x += seedX;
@@ -91,7 +91,6 @@ function applyOperator(operator, x, y) {
 function compositeImage() {
 
     mainCanvas.width = mainCanvas.width;
-
     mainContext.drawImage(canvas, 0, 0, mainCanvas.width, mainCanvas.height);
 
     if (isGrayscale) {
@@ -136,7 +135,7 @@ function drawBackground() {
     }
 
     context.save();
-    context.globalCompositeOperation = 'difference';
+    context.globalCompositeOperation = 'difference'; 
     context.fillStyle = '#fff'; 
     for (let i = moonCount; i--;) {
         const m = 99; 
@@ -144,7 +143,7 @@ function drawBackground() {
         const x = random.float(m * 2 + r, canvas.width - m * 2 - r);
         const y = random.float(m + r, m + r + 300);
         context.beginPath();
-        context.arc(x, y, r, 0, Math.PI * 2);
+        context.arc(x, y, r, 0, Math.PI * 2); 
         context.fill();
     }
     context.restore();
@@ -160,41 +159,40 @@ function update() {
     const roomsWide = thinBuildings ? random.int(1, 4) : random.int(5, 12);
     const Y = startY + (t * 60) * 7 * roomsWide / roomsPerSecond;
 
-    if (Y > canvas.height + 500) {
+    if (Y > canvas.height + 500) { 
         cancelAnimationFrame(animationFrameId); 
-        return; 
+        return;
     }
 
     context.save();
     if (earthquake) {
-
         context.translate(canvas.width / 2, canvas.height / 2);
         context.rotate(random.floatSign(.1));
         context.translate(-canvas.width / 2, -canvas.height / 2);
     }
 
-    const X = random.float(-200, canvas.width + 200);
+    const X = random.float(-200, canvas.width + 200); 
     const w = roomsWide * 2 + 1; 
     const seedScale = random.int(1e6); 
-    const scale = startScale + t * 10 | 0; 
+    const scale = startScale + t * 10 | 0;
 
     for (let k = 1e4; k--;) {
         const i = k % w, j = k / w | 0; 
         const o = applyOperator(windowOperatorType, i, j); 
-        const bright = Math.cos(o * seedScale);
+        const bright = Math.cos(o * seedScale); 
 
         let h = windowHueOffset - j * .001 
-            + bright * (.15 - windowHueOffset)
+            + bright * (.15 - windowHueOffset) 
             + (isRainbow ? t : 0); 
         let s = foreSat + random.floatSign(.1); 
         let l = bright; 
-      
+
         if (i * j % 2 == 0 && !brightBuildings)
             l = s = 0;
         
-        context.fillStyle = hsl(h + extraHueOffset, s, l);
+        context.fillStyle = hsl(h + extraHueOffset, s, l); 
         context.fillRect(
-            i * scale + X | 0, j * scale + Y | 0,
+            i * scale + X | 0, j * scale + Y | 0, 
             scale + (earthquake ? random.float(0, 5) : 0), 
             scale + (earthquake ? random.float(0, 5) : 0));
     }
@@ -209,7 +207,7 @@ function startNewGeneration() {
         cancelAnimationFrame(animationFrameId);
     }
     frame = 0;
-
+    
     canvas.width = 4096;
     canvas.height = 2048;
 
@@ -245,12 +243,31 @@ function startNewGeneration() {
     animationFrameId = requestAnimationFrame(update);
 }
 
+function downloadArt() {
+
+    const dataURL = canvas.toDataURL('image/png'); 
+    const a = document.createElement('a');
+    a.href = dataURL;
+
+    const date = new Date();
+    const filename = `bit-dot-city-${date.getFullYear()}${String(date.getMonth() + 1).padStart(2, '0')}${String(date.getDate()).padStart(2, '0')}-${String(date.getHours()).padStart(2, '0')}${String(date.getMinutes()).padStart(2, '0')}${String(date.getSeconds()).padStart(2, '0')}.png`;
+    a.download = filename;
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+}
+
 const generateBtn = document.getElementById('generateBtn');
 
 generateBtn.addEventListener('click', startNewGeneration);
 
+const downloadBtn = document.getElementById('downloadBtn');
+
+downloadBtn.addEventListener('click', downloadArt);
+
 startNewGeneration();
 
 window.addEventListener('resize', () => {
-    compositeImage();
+
+    compositeImage(); 
 });
