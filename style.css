@@ -4,7 +4,7 @@ body {
     margin: 0;
     background: #111;
     display: flex;
-    flex-direction: column; 
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     font-family: 'Inter', sans-serif;
@@ -16,7 +16,7 @@ canvas {
     max-height: 75vh; 
     max-width: 95vw;  
     width: auto;    
-    height: auto;    
+    height: auto;     
     border: 4px solid #4a5568;
     border-radius: 12px;
     box-shadow: 0 10px 15px rgba(0, 0, 0, 0.5);
