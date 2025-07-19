@@ -5,22 +5,52 @@ body {
     background: #111;
     display: flex;
     flex-direction: column;
-    justify-content: flex-start;
+    justify-content: space-between; 
     align-items: center;
-    font-family: 'Inter', sans-serif;
+    font-family: 'Courier Prime', monospace;
     color: #e2e8f0;
     padding: 0;
     box-sizing: border-box;
     overflow: hidden;
 }
-h1 {
-    margin-top: 20px;
-    margin-bottom: 20px; 
+
+.header-container {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    box-sizing: border-box;
 }
+
+.top-left-buttons {
+    display: flex;
+    gap: 15px;
+}
+
+h1 {
+    margin: 0; 
+    text-align: center;
+    flex-grow: 1; 
+}
+
+.spacer {
+    width: 96px; 
+}
+
+.main-content {
+    display: flex;
+    align-items: center;
+    gap: 20px; 
+    flex-grow: 1; 
+    justify-content: center; 
+    padding-bottom: 20px; 
+}
+
 canvas {
-    width: 75vw; 
+    width: 75vw;
     height: calc(75vh - 120px); 
-    border: 4px solid #4a5568;
+    border: 4px solid #f87171; 
     border-radius: 12px;
     box-shadow: 0 10px 15px rgba(0, 0, 0, 0.5);
     display: block;
@@ -29,19 +59,21 @@ canvas {
     image-rendering: crisp-edges;
     background-color: #000;
 }
-.button-container {
-    margin-top: 20px;
+
+.right-buttons {
     display: flex;
+    flex-direction: column;
     gap: 15px;
 }
-.generate-button, .download-button {
+
+.icon-button, .action-icon-button {
     background-image: linear-gradient(to right, #6a11cb 0%, #2575fc 100%);
     color: white;
-    padding: 12px 24px;
+    width: 48px;
+    height: 48px;
     border-radius: 8px;
     border: none;
-    font-size: 1.1rem;
-    font-weight: bold;
+    font-size: 1.5rem; 
     cursor: pointer;
     transition: all 0.3s ease;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
@@ -49,15 +81,69 @@ canvas {
     display: flex;
     align-items: center;
     justify-content: center;
+    text-decoration: none; 
 }
-.generate-button:hover, .download-button:hover {
+
+.icon-button:hover, .action-icon-button:hover {
     transform: translateY(-2px);
     box-shadow: 0 6px 8px rgba(0, 0, 0, 0.4);
 }
-.generate-button:active, .download-button:active {
+
+.icon-button:active, .action-icon-button:active {
     transform: translateY(0);
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
 }
-.download-button .fas {
-    margin-right: 8px;
+
+.footer-text {
+    margin-bottom: 20px;
+    font-size: 0.9rem;
+    color: #a0aec0;
+}
+
+@media (max-width: 768px) {
+    .header-container {
+        flex-direction: column;
+        gap: 10px;
+        padding: 10px;
+    }
+
+    .top-left-buttons {
+        width: 100%;
+        justify-content: center;
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+
+    .spacer {
+        display: none;
+    }
+
+    .main-content {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    canvas {
+        width: 90vw;
+        height: 60vh; 
+    }
+
+    .right-buttons {
+        flex-direction: row; 
+        width: 90vw;
+        justify-content: center;
+    }
+
+    .icon-button, .action-icon-button {
+        width: 40px;
+        height: 40px;
+        font-size: 1.3rem;
+    }
+
+    .footer-text {
+        font-size: 0.8rem;
+        margin-bottom: 10px;
+    }
 }
