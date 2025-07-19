@@ -5,19 +5,34 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bit Dot Night</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"> <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Courier+Prime&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <h1 class="text-3xl md:text-4xl font-bold mb-6 text-purple-400">Bit Dot Night</h1>
+    <div class="header-container">
+        <div class="top-left-buttons">
+            <a href="https://github.com/dkconnect/bit-city" target="_blank" class="icon-button">
+                <i class="fab fa-github"></i>
+            </a>
+            <a href="study file" class="icon-button">
+                <i class="fas fa-book"></i> </a>
+        </div>
+        <h1 class="text-3xl md:text-4xl font-bold text-purple-400">Bit Dot Night</h1>
+        <div class="spacer"></div> </div>
 
-    <canvas id="pixelArtCanvas"></canvas>
-
-    <div class="button-container">
-        <button id="generateBtn" class="generate-button">Generate New</button>
-        <button id="downloadBtn" class="download-button"><i class="fas fa-download"></i> Download</button>
+    <div class="main-content">
+        <canvas id="pixelArtCanvas"></canvas>
+        <div class="right-buttons">
+            <button id="downloadBtn" class="action-icon-button"><i class="fas fa-download"></i></button>
+            <button id="generateBtn" class="action-icon-button"><i class="fas fa-redo-alt"></i></button>
+        </div>
     </div>
+
+    <footer class="footer-text">
+        COPYRIGHT | 2025 | LUCIFER
+    </footer>
 
     <script src="script.js"></script>
 </body>
