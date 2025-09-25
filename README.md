@@ -7,12 +7,30 @@
 **Bit Dot Night** is a unique generative art piece that creates an infinite, animated cityscape using **bitwise operations** and a seeded pseudo-random number generator. It combines a retro, pixel-art aesthetic with complex mathematical logic to create a diverse array of digital metropolises.
 
 <table align="center">
-| Trait | Example Values |
-| :--- | :--- |
-| **Window Operator** | XOR, AND, OR, Addition, Multiplication |
-| **Background Operator**| XOR, AND, OR, Division/Reciprocal |
-| **Palette** | Grayscale, Rainbow, Shifted Hue |
-| **Atmospherics** | Earthquake, Inverted Colors, Thin Buildings, Many Moons |
+    <thead>
+        <tr>
+            <th>Trait</th>
+            <th>Example Values</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Window Operator</td>
+            <td>XOR, AND, OR, Addition, Multiplication</td>
+        </tr>
+        <tr>
+            <td>Background Operator</td>
+            <td>XOR, AND, OR, Division/Reciprocal</td>
+        </tr>
+        <tr>
+            <td>Palette</td>
+            <td>Grayscale, Rainbow, Shifted Hue</td>
+        </tr>
+        <tr>
+            <td>Atmospherics</td>
+            <td>Earthquake, Inverted Colors, Thin Buildings, Many Moons</td>
+        </tr>
+    </tbody>
 </table>
 
 </div>
@@ -75,15 +93,50 @@ The visual structure of the sky and the window patterns of the buildings are det
 The static method `ArtGenerator.applyOperator(operator, x, y, seedX, seedY)` takes the coordinates (`x`, `y`) and offsets them by two randomized seeds (`seedX`, `seedY`). The resulting values (`X` and `Y`) are then combined using one of seven functions:
 
 <table align="center">
-| Operator ID | Function | Explanation |
-| :---: | :--- | :--- |
-| **0** | `X & Y` | **Bitwise AND:** Results in a pattern that emphasizes overlapping binary structures. |
-| **1** | `X | Y` | **Bitwise OR:** Creates a denser, more connected pattern. |
-| **2** | `X ^ Y` | **Bitwise XOR:** Creates a repeating, checkerboard-like structure, ideal for abstract window patterns. |
-| **3** | `X + Y` | **Addition:** A simple arithmetic operator creating linear gradients. |
-| **4** | `X * Y` | **Multiplication:** Creates rapid-changing patterns based on the product of coordinates. |
-| **5** | `X/Y + Y/X`| **Division/Reciprocal:** Introduces complex, concentric shapes. |
-| **6** | `(X - Y) ^ (X + Y)` | **Complex Bitwise:** A combination of arithmetic and bitwise operations for chaotic results. |
+    <thead>
+        <tr>
+            <th>Operator ID</th>
+            <th>Function</th>
+            <th>Explanation</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>0</td>
+            <td>`X & Y`</td>
+            <td>**Bitwise AND:** Results in a pattern that emphasizes overlapping binary structures.</td>
+        </tr>
+        <tr>
+            <td>1</td>
+            <td>`X | Y`</td>
+            <td>**Bitwise OR:** Creates a denser, more connected pattern.</td>
+        </tr>
+        <tr>
+            <td>2</td>
+            <td>`X ^ Y`</td>
+            <td>**Bitwise XOR:** Creates a repeating, checkerboard-like structure, ideal for abstract window patterns.</td>
+        </tr>
+        <tr>
+            <td>3</td>
+            <td>`X + Y`</td>
+            <td>**Addition:** A simple arithmetic operator creating linear gradients.</td>
+        </tr>
+        <tr>
+            <td>4</td>
+            <td>`X * Y`</td>
+            <td>**Multiplication:** Creates rapid-changing patterns based on the product of coordinates.</td>
+        </tr>
+        <tr>
+            <td>5</td>
+            <td>`X/Y + Y/X`</td>
+            <td>**Division/Reciprocal:** Introduces complex, concentric shapes.</td>
+        </tr>
+        <tr>
+            <td>6</td>
+            <td>`(X - Y) ^ (X + Y)`</td>
+            <td>**Complex Bitwise:** A combination of arithmetic and bitwise operations for chaotic results.</td>
+        </tr>
+    </tbody>
 </table>
 
 The result of this operation is fed into a cosine function (`Math.cos(o * seedScale)`) to generate a smooth, wave-like **brightness** value, which determines the final color.
