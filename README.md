@@ -103,38 +103,38 @@ The static method `ArtGenerator.applyOperator(operator, x, y, seedX, seedY)` tak
     <tbody>
         <tr>
             <td>0</td>
-            <td>`X & Y`</td>
-            <td>**Bitwise AND:** Results in a pattern that emphasizes overlapping binary structures.</td>
+            <td>X & Y</td>
+            <td>Bitwise AND: Results in a pattern that emphasizes overlapping binary structures.</td>
         </tr>
         <tr>
             <td>1</td>
-            <td>`X | Y`</td>
-            <td>**Bitwise OR:** Creates a denser, more connected pattern.</td>
+            <td>X | Y</td>
+            <td>Bitwise OR: Creates a denser, more connected pattern.</td>
         </tr>
         <tr>
             <td>2</td>
-            <td>`X ^ Y`</td>
-            <td>**Bitwise XOR:** Creates a repeating, checkerboard-like structure, ideal for abstract window patterns.</td>
+            <td>X ^ Y</td>
+            <td>Bitwise XOR: Creates a repeating, checkerboard-like structure, ideal for abstract window patterns.</td>
         </tr>
         <tr>
             <td>3</td>
-            <td>`X + Y`</td>
-            <td>**Addition:** A simple arithmetic operator creating linear gradients.</td>
+            <td>X + Y</td>
+            <td>Addition: A simple arithmetic operator creating linear gradients.</td>
         </tr>
         <tr>
             <td>4</td>
-            <td>`X * Y`</td>
-            <td>**Multiplication:** Creates rapid-changing patterns based on the product of coordinates.</td>
+            <td>X * Y</td>
+            <td>Multiplication: Creates rapid-changing patterns based on the product of coordinates.</td>
         </tr>
         <tr>
             <td>5</td>
-            <td>`X/Y + Y/X`</td>
-            <td>**Division/Reciprocal:** Introduces complex, concentric shapes.</td>
+            <td>X/Y + Y/X</td>
+            <td>Division/Reciprocal:** Introduces complex, concentric shapes.</td>
         </tr>
         <tr>
             <td>6</td>
-            <td>`(X - Y) ^ (X + Y)`</td>
-            <td>**Complex Bitwise:** A combination of arithmetic and bitwise operations for chaotic results.</td>
+            <td>(X - Y) ^ (X + Y)</td>
+            <td>Complex Bitwise: A combination of arithmetic and bitwise operations for chaotic results.</td>
         </tr>
     </tbody>
 </table>
