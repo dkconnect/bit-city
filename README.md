@@ -30,6 +30,16 @@ My Best One
       <br>
       <sub><b>Grayscale Palette</b></sub>
     </td>
+    <td align="center">
+      <img src="bit-dot-city-20250713-201438.png" alt="Grayscale City Trait" width="250"/>
+      <br>
+      <sub><b>Rainbow Palette</b></sub>
+    </td>
+    <td align="center">
+      <img src="bit-dot-city-20250713-200218.png" alt="Grayscale City Trait" width="250"/>
+      <br>
+      <sub><b>Different Palette</b></sub>
+    </td>
   </tr>
 </table>
 
