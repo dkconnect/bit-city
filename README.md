@@ -1,17 +1,25 @@
+<div align="center">
+
 # Bit Dot Night
 
 ## Generative Pixel Cityscape
 
 **Bit Dot Night** is a unique generative art piece that creates an infinite, animated cityscape using **bitwise operations** and a seeded pseudo-random number generator. It combines a retro, pixel-art aesthetic with complex mathematical logic to create a diverse array of digital metropolises.
 
+<table align="center">
 | Trait | Example Values |
 | :--- | :--- |
 | **Window Operator** | XOR, AND, OR, Addition, Multiplication |
 | **Background Operator**| XOR, AND, OR, Division/Reciprocal |
 | **Palette** | Grayscale, Rainbow, Shifted Hue |
 | **Atmospherics** | Earthquake, Inverted Colors, Thin Buildings, Many Moons |
+</table>
+
+</div>
 
 ---
+
+<div align="center">
 
 ## Image Gallery
 
@@ -23,27 +31,31 @@ My Best One
 
 ### Traits Showcase
 
-<table width="100%">
-  <tr>
-    <td align="center">
-      <img src="bit-dot-city-20250713-200212.png" alt="Grayscale City Trait" width="250"/>
-      <br>
-      <sub><b>Grayscale Palette</b></sub>
-    </td>
-    <td align="center">
-      <img src="bit-dot-city-20250713-201438.png" alt="Grayscale City Trait" width="250"/>
-      <br>
-      <sub><b>Rainbow Palette</b></sub>
-    </td>
-    <td align="center">
-      <img src="bit-dot-city-20250713-200218.png" alt="Grayscale City Trait" width="250"/>
-      <br>
-      <sub><b>Different Palette</b></sub>
-    </td>
-  </tr>
+<table width="100%" align="center">
+  <tr>
+    <td align="center">
+      <img src="bit-dot-city-20250713-200212.png" alt="Grayscale City Trait" width="250"/>
+      <br>
+      <sub><b>Grayscale Palette</b></sub>
+    </td>
+    <td align="center">
+      <img src="bit-dot-city-20250713-201438.png" alt="Grayscale City Trait" width="250"/>
+      <br>
+      <sub><b>Rainbow Palette</b></sub>
+    </td>
+    <td align="center">
+      <img src="bit-dot-city-20250713-200218.png" alt="Grayscale City Trait" width="250"/>
+      <br>
+      <sub><b>Different Palette</b></sub>
+    </td>
+  </tr>
 </table>
 
+</div>
+
 ---
+
+<div align="center">
 
 ## The Logic and Math Explained
 
@@ -62,6 +74,7 @@ The visual structure of the sky and the window patterns of the buildings are det
 
 The static method `ArtGenerator.applyOperator(operator, x, y, seedX, seedY)` takes the coordinates (`x`, `y`) and offsets them by two randomized seeds (`seedX`, `seedY`). The resulting values (`X` and `Y`) are then combined using one of seven functions:
 
+<table align="center">
 | Operator ID | Function | Explanation |
 | :---: | :--- | :--- |
 | **0** | `X & Y` | **Bitwise AND:** Results in a pattern that emphasizes overlapping binary structures. |
@@ -71,6 +84,7 @@ The static method `ArtGenerator.applyOperator(operator, x, y, seedX, seedY)` tak
 | **4** | `X * Y` | **Multiplication:** Creates rapid-changing patterns based on the product of coordinates. |
 | **5** | `X/Y + Y/X`| **Division/Reciprocal:** Introduces complex, concentric shapes. |
 | **6** | `(X - Y) ^ (X + Y)` | **Complex Bitwise:** A combination of arithmetic and bitwise operations for chaotic results. |
+</table>
 
 The result of this operation is fed into a cosine function (`Math.cos(o * seedScale)`) to generate a smooth, wave-like **brightness** value, which determines the final color.
 
@@ -80,7 +94,11 @@ The cityscape is animated using an `update()` loop (`requestAnimationFrame`). In
 
 * The vertical position (`Y`) of each building is calculated based on the animation **time** (`t`) and a randomized **rooms per second** parameter, giving the illusion of continuous upward movement.
 
+</div>
+
 ---
+
+<div align="center">
 
 ## Implementation Details
 
@@ -92,5 +110,7 @@ The cityscape is animated using an `update()` loop (`requestAnimationFrame`). In
 
 ### Canvas Usage
 
-1.  **Offscreen Canvas (High-Res):** A `4096 x 2048` canvas is used for all drawing operations (`this.offscreenCanvas`). This ensures that the generated image, when downloaded, is a high-resolution version, regardless of the user's screen size.
-2.  **Main Canvas (Display):** The visible canvas (`#pixelArtCanvas`) scales the high-resolution image down to fit the screen.
+1.  **Offscreen Canvas (High-Res):** A `4096 x 2048` canvas is used for all drawing operations (`this.offscreenCanvas`). This ensures that the generated image, when downloaded, is a high-resolution version, regardless of the user's screen size.
+2.  **Main Canvas (Display):** The visible canvas (`#pixelArtCanvas`) scales the high-resolution image down to fit the screen.
+
+</div>
