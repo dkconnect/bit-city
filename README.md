@@ -35,15 +35,9 @@
 
 </div>
 
----
-
 <div align="center">
 
-## Image Gallery
-
 ### Generated Output
-
-My Best One
 
 ![My Best Generation](bit-dot-city-20250713-201426.png)
 
