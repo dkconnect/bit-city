@@ -19,21 +19,19 @@
 
 My Best One
 
-![Output](bit-dot-city-20250713-201426.png)
+![My Best Generation](bit-dot-city-20250713-201426.png)
 
 ### Traits Showcase
 
-Showcase a few different outputs illustrating the various randomized features (e.g., Grayscale, Earthquake, Big Moon).
-
-```
-
-[Small Image 1: e.g., Grayscale]
-
-[Small Image 2: e.g., Earthquake]
-
-[Small Image 3: e.g., Rainbow]
-
-```
+<table width="100%">
+  <tr>
+    <td align="center">
+      <img src="bit-dot-city-20250713-200212.png" alt="Grayscale City Trait" width="250"/>
+      <br>
+      <sub><b>Grayscale Palette</b></sub>
+    </td>
+  </tr>
+</table>
 
 ---
 
