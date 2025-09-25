@@ -123,7 +123,7 @@ The static method `ArtGenerator.applyOperator(operator, x, y, seedX, seedY)` tak
         <tr>
             <td>5</td>
             <td>X/Y + Y/X</td>
-            <td>Division/Reciprocal:** Introduces complex, concentric shapes.</td>
+            <td>Division/Reciprocal: Introduces complex, concentric shapes.</td>
         </tr>
         <tr>
             <td>6</td>
